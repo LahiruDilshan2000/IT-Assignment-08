@@ -5,30 +5,34 @@
     <title>Title</title>
     <link rel="stylesheet" href="assets/fontsAwesome/css/all.css">
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             width: 100%;
             height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(to bottom,#d4b99f 46.2%, #cba989 46.2%);
+            background: linear-gradient(to bottom, #d4b99f 46.2%, #cba989 46.2%);
         }
-        .container{
+
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .container ul{
+
+        .container ul {
             display: flex;
         }
-        .container ul li{
+
+        .container ul li {
             width: 150px;
             height: 150px;
             margin: 20px;
@@ -40,14 +44,17 @@
             font-size: 1.8em;
             color: red;
         }
-        .container ul li img{
+
+        .container ul li img {
             width: 150px;
             aspect-ratio: 1/1;
         }
-        .btn-container{
+
+        .btn-container {
             padding-top: 100px;
         }
-        .btn-container button{
+
+        .btn-container button {
             width: 55px;
             height: 55px;
             font-size: 1.5em;
@@ -61,7 +68,8 @@
             overflow: hidden;
             z-index: 20;
         }
-        .btn-container button span{
+
+        .btn-container button span {
             position: absolute;
             border-radius: 50%;
             width: 0;
@@ -75,7 +83,8 @@
             transition: ease-in-out 0.5s;
             z-index: -1;
         }
-        .btn-container button:hover span{
+
+        .btn-container button:hover span {
             width: 100%;
             height: 100%;
         }
@@ -92,32 +101,41 @@
 <script src="assets/lib/jquery-3.6.4.min.js"></script>
 <script>
 
-    let queArray = ['A','B','C','D','E','F'];
+    let queArray = ['A', 'B', 'C', 'D', 'E', 'F'];
     let interval = null;
 
+
     $('#btnStart').on('click', () => {
-        interval = setInterval(setList,800);
+        interval = setInterval(setList, 800);
     });
     $('#btnStop').on('click', () => {
+        stopAnimate();
         clearInterval(interval);
     });
+
     let enqueue = () => {
         queArray.unshift(queArray.pop());
     }
+    const stopAnimate = () => {
+        $('.container ul li img').remove();
+        $('.container ul li').append("<img src='assets/images/Annotation%202023-06-12%20194002.png'>");
+
+    }
+
     const setList = () => {
 
         $('.container ul li').remove();
 
         queArray.map(value => {
 
-            $('.container ul').append("<li>"+value+
-                "<img src='assets/gif/e5079365113681.5ae94b6872f65.gif'>"+
+            $('.container ul').append("<li>" + value +
+                "<img src='assets/gif/e5079365113681.5ae94b6872f65.gif'>" +
                 "</li>");
         });
-
         enqueue();
     }
     setList();
+    stopAnimate();
 
 
 </script>
