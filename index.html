@@ -23,10 +23,6 @@
             width: 100%;
             min-height: 100vh;
             background: linear-gradient(to top, rgb(15 23 42) 40%, #282B64 40%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
         .header{
             width: 100%;
@@ -38,7 +34,15 @@
             font-family: 'Open Sans', sans-serif;
             letter-spacing: 3px;
             font-weight: bolder;
-            padding-top: 100px;
+            padding-top: 50px;
+        }
+        .header h2{
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 3px;
+            font-weight: 400;
+            padding-top: 10px;
         }
         .container{
             width: 100%;
@@ -59,25 +63,36 @@
             transition: ease-in-out 0.5s;
             cursor: pointer;
             position: relative;
+            padding: 40px 20px;
         }
         .asg-card:hover {
+            padding: 30px 20px;
             transform: scale(1.05);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
         }
         .asg-card p {
-            font-size: 0.8em;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.7em;
+            color: rgba(0, 255, 255, 0.5);
             font-family: 'Roboto', sans-serif;
             letter-spacing: 2px;
             font-weight: 400;
             line-height: 22px;
-            margin-top: 80px;
             transition: all 0.3s;
+        }
+        .asg-card p:first-child{
+            font-size: 0.7em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .asg-card p:nth-child(2){
+            margin-top: 5px;
         }
         .asg-card:hover p {
             color: rgba(255, 255, 255, 1);
         }
-        .asg-card a {
+        .asg-card:hover p:nth-child(2) {
+            color: rgba(0, 255, 255, 1);
+        }
+        .asg-card .git-page {
             width: 35px;
             height: 35px;
             border: 2.5px solid orangered;
@@ -93,7 +108,7 @@
             opacity: 0;
             z-index: 20;
         }
-        .asg-card a i {
+        .asg-card .git-page i {
             color: #fff;
             font-size: 0;
             margin: 0;
@@ -102,16 +117,16 @@
             transform: translateX(-60px);
         }
 
-        .asg-card:hover a {
+        .asg-card:hover .git-page {
             transform: translateX(75px);
             opacity: 1;
         }
 
-        .asg-card:hover a i{
+        .asg-card:hover .git-page i{
             font-size: 1.1em;
             transform: translateX(0px);
         }
-        .asg-card a span {
+        .asg-card .git-page span {
             width: 0%;
             height: 0%;
             background: orangered;
@@ -126,62 +141,29 @@
             transition: ease-in-out 0.3s;
         }
 
-        .asg-card a:hover span {
+        .asg-card .git-page:hover span {
             width: 100%;
             height: 100%;
         }
-        #my-Repo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.1em;
-            font-family: 'Roboto', sans-serif;
-            width: 150px;
-            height: 40px;
-            position: relative;
-            border-radius: 30px;
-            border: 2px solid #49c5b6;
-            background: transparent;
-            z-index: 20;
-            overflow: hidden;
-        }
-
-        #my-Repo span {
-            height: 100%;
-            width: 0px;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            background: #49c5b6;
-            transition: 0.5s ease-in-out;
-            z-index: -1;
-        }
-
-        #my-Repo:hover span {
-            width: 100%;
-        }
-
     </style>
 </head>
 <body>
 <section>
     <div class="header">
-        <h1>Assignment 08</h1>
+        <h1>Assignment 08 </h1>
+        <h2>Advanced Html Css Js animations</h2>
     </div>
     <div class="container">
         <div class="asg-card">
             <p>Case 01</p>
-            <a href="case_01.html"><span></span><i class="fa-solid fa-arrow-right"></i></a>
+            <p>Que Process Using HTML, CSS and JS.</p>
+            <a href="case_01.html" class="git-page"><span></span><i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="asg-card">
             <p>Case 02</p>
-            <a href="case_02.html"><span></span><i class="fa-solid fa-arrow-right"></i></a>
+            <p>Light system Using HTML, CSS and JS.</p>
+            <a href="case_02.html" class="git-page"><span></span><i class="fa-solid fa-arrow-right"></i></a>
         </div>
-    </div>
-    <div class="repo">
-        <a href="https://github.com/LahiruDilshan2000/IT-Assignment-08.git" id="my-Repo" data-aos="fade-up"><span></span>Go to Git</a>
     </div>
 </section>
 </body>
